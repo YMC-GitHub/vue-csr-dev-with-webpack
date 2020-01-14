@@ -19,8 +19,9 @@
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
 
-//include some lib
+//include some data
 const serverConfig = require('./server.config')
+const projectDirConstrutoConfig = require('./dir.construtor')
 module.exports = {
   build: {
     host: serverConfig.build.host,
@@ -29,7 +30,9 @@ module.exports = {
     index: serverConfig.build.index,
     //define root assets dir
     assetsRoot: serverConfig.build.www,
-    assetsSubDirectory: 'static',
+    // the assetsSubDirectory.to is relative to assetsRoot
+    assetsSubDirectory: { from: projectDirConstrutoConfig.public, to: 'static' },
+    // the assert public path is relative to assetsRoot
     assetsPublicPath: '/',
     productionSourceMap: true,
     // https://webpack.js.org/configuration/devtool/#production
@@ -51,7 +54,7 @@ module.exports = {
     port: serverConfig.dev.port,
     index: serverConfig.dev.index,
     //define static assets dir
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: { from: projectDirConstrutoConfig.public, to: 'static' },
     //define public assets dir
     assetsPublicPath: '/',
     //define proxy map

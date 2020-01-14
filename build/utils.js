@@ -35,8 +35,8 @@ exports.isTes = function () {
 //export assetsPath to get assert path from project env
 exports.assetsPath = function (_path) {
   const assetsSubDirectory = exports.isPro()
-    ? config.build.assetsSubDirectory
-    : config.dev.assetsSubDirectory
+    ? config.build.assetsSubDirectory.to
+    : config.dev.assetsSubDirectory.to
 
   return path.posix.join(assetsSubDirectory, _path)
 }

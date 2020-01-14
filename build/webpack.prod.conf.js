@@ -100,7 +100,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: isTes ? 'index.html' : config.build.index,
       //use the index.html file in project dir as his template
-      template: resolve('src/csr-index.template.html'),
+      template: config.dev.index,
       inject: true,
       minify: {
         removeComments: true,
@@ -149,8 +149,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     // copy custom static assets
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../static'),
-        to: config.build.assetsSubDirectory,
+        from: config.dev.assetsSubDirectory.from,
+        to: config.dev.assetsSubDirectory.to,
         ignore: ['.*']
       }
     ])

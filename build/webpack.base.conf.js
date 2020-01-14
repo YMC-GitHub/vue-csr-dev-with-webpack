@@ -23,9 +23,9 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
 //define some file-level fun
-function resolve(dir) {
-  return path.join(__dirname, '..', dir)
-}
+const rootPath = path.resolve(__dirname, '../')
+const resolve = file => path.resolve(rootPath, file)
+
 const createLintingRule = () => ({
   test: /\.(js|vue)$/,
   loader: 'eslint-loader',

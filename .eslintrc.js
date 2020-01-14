@@ -1,100 +1,51 @@
-//-----------config----------
-//it is a config file for eslint
-//-----------config----------
-//tasks:
-//01.use babel-eslint lib as parser
-//02.support es6
-//03.support jsx
-//04.use eslint-plugin-vue
-//05.use eslint-plugin-prettier
-//
-//...
+// http://eslint.org/docs/user-guide/configuring
 
-
-// https://eslint.org/docs/user-guide/configuring
 module.exports = {
   root: true,
+  parser: 'babel-eslint',
   parserOptions: {
-    //use babel-eslint lib as parser
-    parser: 'babel-eslint',
-    //support es6
-    'ecmaVersion': 6,
-    //my code is in ECMAScript modules?
-    'sourceType': 'module',
-    'ecmaFeatures': {
-      //support jsx
-      'jsx': true,
-      'modules': true,
-      'experimentalObjectRestSpread': true
-    }
+    sourceType: 'module'
   },
   env: {
-    // predefined global variables for browser env
-    'browser': true,
-    // predefined global variables for node env
-    'node': true,
-    //support es6
-    'es6': true,
-    // for browser-only code that uses Browserify/WebPack
-    'commonjs': true
+    browser: true,
+    node: true
   },
-  //use some rule from some extend
-  extends: [
-    //use eslint built in rule
-    'eslint:recommended',
-    //use eslint-plugin-standard 's rule
-    //'standard'
-
-    //use eslint-plugin-node 's rule
-    //'plugin:node/recommended',
-
-    //use eslint-plugin-import 's rule
-    //'plugin:import/errors',
-    //'plugin:import/warnings',
-
-    //use eslint-plugin-promise 's rule
-    //'plugin:promise/recommended',
-
-    //use eslint-plugin-vue 's rule
-    // https://www.npmjs.com/package/eslint-plugin-vue
-    //'extends': 'plugin:vue/base',
-    //'plugin:vue/essential',
-    'plugin:vue/strongly-recommended',
-    //'plugin:vue/recommended',
-
-    //use eslint-plugin-prettier 's rule
-    'plugin:prettier/recommended',
-    //"prettier/flowtype",
-    //"prettier/react",
-    //"prettier/standard"
-  ],
+  extends: 'airbnb-base',
   // required to lint *.vue files
-  //use some plugin ,eg eslint-plugin-xx
   plugins: [
-    //use eslint-plugin-node
-    //"node",
-    //use eslint-plugin-promise
-    //"promise",
-    //use eslint-plugin-import
-    //"import",
-    //use eslint-plugin-vue
-    'vue',
-    //use eslint-plugin-prettier
-    'prettier'
-
+    'html'
   ],
-
+  // check if imports actually resolve
+  'settings': {
+    'import/resolver': {
+      'webpack': {
+        'config': process.env.NODE_ENV === 'development' ? 'build/webpack.dev.conf.js' : 'build/webpack.prod.conf.js'
+      }
+    }
+  },
   // add your custom rules here
-  //错误提示级别-忽略:'off|0'|警告:'warn|1'|报错:'error|2'
-  rules: {
-    // allow async-await
-    'generator-star-spacing': 'off',
+  'rules': {
+    'global-require': 0,
+    'no-param-reassign': 0,
+    'func-names': 0,
+    // don't require .vue extension when importing
+    'import/extensions': ['error', 'always', {
+      'js': 'never',
+      'vue': 'never',
+      'json': 'never'
+    }],
+    // allow optionalDependencies
+    'import/no-extraneous-dependencies': ['error', {
+      'optionalDependencies': ['test/unit/index.js']
+    }],
+    'semi': [2, 'never'],
+    'comma-dangle': 0,
+    'prefer-promise-reject-errors': 0,
+    'import/prefer-default-export': 0,
+    'no-console': 0,
+    'no-plusplus': 0,
+    'no-unused-vars': [2, { 'args': 'none' }],
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-
-    //'prettier/prettier': 'error',
-    //'prettier/prettier': ['error', { 'singleQuote': true, 'parser': 'flow' }],
-    // it dose not work as below when using ".prettier.config.js" , not ".prettierrc"
-    //'prettier/prettier': ['error', {'parser': 'flow'},{"usePrettierrc": true}]
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
 }

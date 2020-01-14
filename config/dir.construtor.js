@@ -1,22 +1,18 @@
 //----------config dir----------
 //it is a config for project dir contrutor
 //----------config dir----------
-//tasks:
-//
-//todos:
-//use him in ./index.js
-//use him in ../build/webpack.base.js
-//use him in ../build/webpack.dev.js
-//use him in ../build/webpack.pro.js
-
 'use strict'
+const path = require('path')
+const resolve = file => path.resolve(__dirname, file)
 module.exports = {
-  //source file dir name
-  src: 'src',
-  //test file dir name
-  test: 'test',
-  //static file dir name
-  static: 'static',
-  //build ouput file dir name
-  dist: 'dist',
+  //save the source code (for dev)
+  src: resolve('../src'),
+  //save the test source code (for test)
+  test: resolve('../test'),
+  //save the build ouput code by webpack
+  dist: resolve('../dist'),
+  //static resource file that will be serve by server
+  static: resolve('../static'),
+  //static resource file that will be serve by server
+  public: resolve('../public'),
 }

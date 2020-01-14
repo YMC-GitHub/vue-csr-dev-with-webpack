@@ -123,30 +123,30 @@ note: remember to take care of their version with each other.
 
 \# for default env:
 
-01.use env plugin
+01.tell babel to use env presets? [config](.babelrc#L4-#L4)
 
-02.set lib module type is es5
+02.tell babel to your code has been in es5 syntax? [config](.babelrc#L6-#L6)
 
-03.set what env translate to
+03.tell babel to set what env translate to(browser x?)? [config](.browserslistrc#L1-#L3)
 
-04.use jsx for vue
+04.tell babel to set what env translate to(node?..?)? [config](.babelrc#L4-#L7)
 
-05.use transform for runtime in web app
+05.tell babel to use transform for runtime in web app? [config](.babelrc#L12-#L12)
 
-06.use dynamic import syntax
+06.tell babel to use dynamic import syntax? [config](.babelrc#L13-#L13)
 
-07.use es7 in babel6?
+07.tell babel to use jsx for vue? [config](.babelrc#L14-#L14)
+
+08.tell babel to use some es7 feat in babel6? [config](.babelrc#L9-#L9)
 
 
 \# for test env:
 
-01.set test env flag
+01.set test env flag? [config](.babelrc#L17-#L17)
 
-02.set lib module type is es6+
+02.set lib module type is es6+? [config](.babelrc#L19-#L19)
 
-03.use jsx for vue
-
-04.use coverage collection
+03.use coverage collection? [config](.babelrc#L26-#L26)
 
 
 `.eslintrc.js`

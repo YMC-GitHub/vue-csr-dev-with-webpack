@@ -5,4 +5,6 @@ https://old.babeljs.io/docs/plugins/
 https://blog.csdn.net/wang252949/article/details/79064046
 #兼容接口
 https://www.jianshu.com/p/7bc7b0fadfc2
+#for vue-jsx
+https://yq.aliyun.com/articles/646354
 ```

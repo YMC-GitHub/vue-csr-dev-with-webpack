@@ -16,13 +16,14 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
-import Thread from "./Thread";
+import { mapActions, mapGetters } from 'vuex'
+import Thread from './Thread'
+
 
 export default {
-  name: "ThreadSection",
+  name: 'ThreadSection',
   components: { Thread },
-  computed: mapGetters("chat", ["threads", "currentThread", "unreadCount"]),
-  methods: mapActions("chat", ["switchThread"])
-};
+  computed: mapGetters('chat', ['threads', 'currentThread', 'unreadCount']),
+  methods: mapActions('chat', ['switchThread'])
+}
 </script>

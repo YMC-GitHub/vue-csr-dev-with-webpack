@@ -1,21 +1,22 @@
 <template>
   <div class="button-view">
-    <px-button />
+    <px-button></px-button>
   </div>
 </template>
 
 <script>
-import PxButton from "@/components/Button";
+import PxButton from '@/components/Button'
 
 export default {
-  name: "ButtonView",
+  name: 'button-view',
   title() {
-    return "Koa Vue SSR | Button";
+    return 'Koa Vue SSR | Button'
   },
   components: {
     PxButton
   }
-};
+}
 </script>
 
-<style></style>
+<style>
+</style>

@@ -5,16 +5,17 @@
 </template>
 
 <script>
-import PxMenu from "@/components/Menu";
+import PxMenu from '@/components/Menu'
 
 export default {
   title() {
-    return "Koa Vue SSR | Menu";
+    return 'Koa Vue SSR | Menu'
   },
   components: {
     PxMenu
   }
-};
+}
 </script>
 
-<style></style>
+<style>
+</style>

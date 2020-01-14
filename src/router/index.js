@@ -1,10 +1,10 @@
-import Vue from "vue";
-import Router from "vue-router";
+import Vue from 'vue'
+import Router from 'vue-router'
 // import HomeView from '@/views/HomeView'
 // import MenuView from '@/views/MenuView'
 // import ButtonView from '@/views/ButtonView'
 
-Vue.use(Router);
+Vue.use(Router)
 
 /* eslint-disable import/no-dynamic-require */
 /* export default new Router({
@@ -20,17 +20,17 @@ Vue.use(Router);
 
 export function createRouter() {
   return new Router({
-    mode: "history",
+    mode: 'history',
     scrollBehavior: () => ({ y: 0 }),
     routes: [
-      { path: "/", redirect: "/home" },
-      { path: "/home", component: () => import("@/views/HomeView") },
-      { path: "/button", component: () => import("@/views/ButtonView") },
-      { path: "/menu", component: () => import("@/views/MenuView") },
-      { path: "/lang", component: () => import("@/views/LangView") },
-      { path: "/chat", component: () => import("@/views/ChatView") },
+      { path: '/', redirect: '/home' },
+      { path: '/home', component: () => import('@/views/HomeView') },
+      { path: '/button', component: () => import('@/views/ButtonView') },
+      { path: '/menu', component: () => import('@/views/MenuView') },
+      { path: '/lang', component: () => import('@/views/LangView') },
+      { path: '/chat', component: () => import('@/views/ChatView') },
 
-      { path: "*", redirect: "/" }
+      { path: '*', redirect: '/' }
     ]
-  });
+  })
 }

@@ -1,64 +1,35 @@
 <template>
   <div id="app">
     <div class="menu-horizontal">
-      <router-link 
-class="menu__heading menu__link" to="/home"
-      >Home</router-link
-      >
+      <router-link class="menu__heading menu__link" to="/home">Home</router-link>
       <ul class="menu__list">
         <li class="menu__item">
-          <router-link
-            class="menu__link"
-            to="/menu"
-            active-class="menu__item--active"
-          >Menu</router-link
-          >
+          <router-link class="menu__link" to="/menu" active-class="menu__item--active">Menu</router-link>
         </li>
         <li class="menu__item">
-          <router-link
-            class="menu__link"
-            to="/button"
-            active-class="menu__item--active"
-          >Button</router-link
-          >
+          <router-link class="menu__link" to="/button" active-class="menu__item--active">Button</router-link>
         </li>
         <li class="menu__item">
-          <router-link
-            class="menu__link"
-            to="/lang"
-            active-class="menu__item--active"
-          >Lang</router-link
-          >
+          <router-link class="menu__link" to="/lang" active-class="menu__item--active">Lang</router-link>
         </li>
         <li class="menu__item">
-          <router-link
-            class="menu__link"
-            to="/chat"
-            active-class="menu__item--active"
-          >Chat</router-link
-          >
+          <router-link class="menu__link" to="/chat" active-class="menu__item--active">Chat</router-link>
         </li>
         <li class="menu__item">
-          <router-link
-            class="menu__link"
-            to="/shop"
-            active-class="menu__item--active"
-          >Shop</router-link
-          >
+          <router-link class="menu__link" to="/shop" active-class="menu__item--active">Shop</router-link>
         </li>
       </ul>
     </div>
-    <transition 
-name="fade" mode="out-in">
-      <router-view class="view" />
+    <transition name="fade" mode="out-in">
+      <router-view class="view"></router-view>
     </transition>
   </div>
 </template>
 
 <script>
 export default {
-  name: "APP"
-};
+  name: 'APP'
+}
 </script>
 
 <style>

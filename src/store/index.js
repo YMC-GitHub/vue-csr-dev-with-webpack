@@ -1,11 +1,11 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import state from "./state";
-import actions from "./actions";
-import mutations from "./mutations";
-import chat from "./chat";
+import Vue from 'vue'
+import Vuex from 'vuex'
+import state from './state'
+import actions from './actions'
+import mutations from './mutations'
+import chat from './chat'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 /* const store = new Vuex.Store({
   state: {
@@ -26,5 +26,5 @@ export function createStore() {
     modules: {
       chat
     }
-  });
+  })
 }

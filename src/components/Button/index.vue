@@ -2,8 +2,7 @@
   <div class="button-template">
     <div class="button">default</div>
     <div class="button button--active">active</div>
-    <div 
-class="button" disabled>disabled</div>
+    <div class="button" disabled>disabled</div>
     <!--  Buttons with different status -->
     <div>
       <div class="button button--primary">primary</div>
@@ -41,8 +40,8 @@ class="button" disabled>disabled</div>
 
 <script>
 export default {
-  name: "Button"
-};
+  name: 'button'
+}
 </script>
 
 <style>

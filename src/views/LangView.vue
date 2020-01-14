@@ -3,9 +3,10 @@
     <p>{{ $t("message.hello") }}</p>
     <div class="locale-changer">
       <select v-model="$i18n.locale">
-        <option v-for="(lang, i) in langs" 
-:key="`Lang${i}`" :value="lang">
-          {{ lang }}
+        <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">
+          {{
+          lang
+          }}
         </option>
       </select>
     </div>
@@ -15,8 +16,8 @@
 export default {
   data() {
     return {
-      langs: ["ch", "en"]
-    };
+      langs: ['ch', 'en']
+    }
   },
   methods: {
     fetchLang(e) {
@@ -25,7 +26,7 @@ export default {
     changeLang() {}
   },
   title() {
-    return "Koa Vue SSR| Lang";
+    return 'Koa Vue SSR| Lang'
   }
-};
+}
 </script>

@@ -10,10 +10,10 @@
 
 <script>
 export default {
-  name: "Message",
+  name: 'Message',
   props: {
     // eslint-disable-next-line
     message: Object
   }
-};
+}
 </script>

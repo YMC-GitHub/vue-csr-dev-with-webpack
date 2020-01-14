@@ -3,6 +3,6 @@ const state = {
   post: {},
   tag: {},
   archives: {}
-};
+}
 
-export default state;
+export default state

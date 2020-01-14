@@ -10,13 +10,13 @@
 </template>
 
 <script>
-import ProductList from "@/components/shop/ProductList";
-import ShoppingCart from "@/components/shop/Cart";
+import ProductList from '@/components/shop/ProductList'
+import ShoppingCart from '@/components/shop/Cart'
 
 export default {
   components: { ProductList, ShoppingCart },
   title() {
-    return "Koa Vue SSR| Shop";
+    return 'Koa Vue SSR| Shop'
   }
-};
+}
 </script>

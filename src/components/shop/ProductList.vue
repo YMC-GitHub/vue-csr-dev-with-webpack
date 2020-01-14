@@ -13,15 +13,15 @@ v-for="product in products" :key="product.id">
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions } from 'vuex'
 
 export default {
   computed: mapState({
     products: state => state.shop.products.all
   }),
-  methods: mapActions("shop/cart", ["addProductToCart"]),
+  methods: mapActions('shop/cart', ['addProductToCart']),
   created() {
-    this.$store.dispatch("shop/products/getAllProducts");
+    this.$store.dispatch('shop/products/getAllProducts')
   }
-};
+}
 </script>

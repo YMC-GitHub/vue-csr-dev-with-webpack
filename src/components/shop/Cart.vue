@@ -21,22 +21,22 @@ v-for="product in products" :key="product.id">
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
+import { mapGetters, mapState } from 'vuex'
 
 export default {
   computed: {
     ...mapState({
       checkoutStatus: state => state.shop.cart.checkoutStatus
     }),
-    ...mapGetters("shop/cart", {
-      products: "cartProducts",
-      total: "cartTotalPrice"
+    ...mapGetters('shop/cart', {
+      products: 'cartProducts',
+      total: 'cartTotalPrice'
     })
   },
   methods: {
     checkout(products) {
-      this.$store.dispatch("shop/cart/checkout", products);
+      this.$store.dispatch('shop/cart/checkout', products)
     }
   }
-};
+}
 </script>

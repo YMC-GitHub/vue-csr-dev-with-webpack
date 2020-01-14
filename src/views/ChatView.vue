@@ -10,17 +10,17 @@
 </template>
 
 <script>
-import ThreadSection from "@/components/chat/ThreadSection";
-import MessageSection from "@/components/chat/MessageSection";
+import ThreadSection from '@/components/chat/ThreadSection'
+import MessageSection from '@/components/chat/MessageSection'
 
 export default {
-  name: "Chat",
+  name: 'Chat',
   components: {
     ThreadSection,
     MessageSection
   },
   title() {
-    return "Koa Vue SSR| Chat";
+    return 'Koa Vue SSR| Chat'
   }
-};
+}
 </script>

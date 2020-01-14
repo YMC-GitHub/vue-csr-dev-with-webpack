@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "Thread",
+  name: 'Thread',
   props: {
     /* eslint-disable */
     thread: Object,

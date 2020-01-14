@@ -1,4 +1,4 @@
-import Vue from "vue";
+import Vue from 'vue'
 
 function createThread(state, id, name) {
   Vue.set(state.threads, id, {
@@ -6,49 +6,49 @@ function createThread(state, id, name) {
     name,
     messages: [],
     lastMessage: null
-  });
+  })
 }
 
 function addMessage(state, message) {
   // add a `isRead` field before adding the message
-  message.isRead = message.threadID === state.currentThreadID;
+  message.isRead = message.threadID === state.currentThreadID
   // add it to the thread it belongs to
-  const thread = state.threads[message.threadID];
+  const thread = state.threads[message.threadID]
   if (!thread.messages.some(id => id === message.id)) {
-    thread.messages.push(message.id);
-    thread.lastMessage = message;
+    thread.messages.push(message.id)
+    thread.lastMessage = message
   }
   // add it to the messages map
-  Vue.set(state.messages, message.id, message);
+  Vue.set(state.messages, message.id, message)
 }
 
 function setCurrentThread(state, id) {
-  state.currentThreadID = id;
+  state.currentThreadID = id
   if (!state.threads[id]) {
     // eslint-disable-next-line
     debugger;
   }
   // mark thread as read
-  state.threads[id].lastMessage.isRead = true;
+  state.threads[id].lastMessage.isRead = true
 }
 
 export default {
   receiveAll(state, messages) {
-    let latestMessage;
-    messages.forEach(message => {
+    let latestMessage
+    messages.forEach((message) => {
       // create new thread if the thread doesn't exist
       if (!state.threads[message.threadID]) {
-        createThread(state, message.threadID, message.threadName);
+        createThread(state, message.threadID, message.threadName)
       }
       // mark the latest message
       if (!latestMessage || message.timestamp > latestMessage.timestamp) {
-        latestMessage = message;
+        latestMessage = message
       }
       // add message
-      addMessage(state, message);
-    });
+      addMessage(state, message)
+    })
     // set initial thread to the one with the latest message
-    setCurrentThread(state, latestMessage.threadID);
+    setCurrentThread(state, latestMessage.threadID)
   },
 
   /**
@@ -57,10 +57,10 @@ export default {
    * @param {*} message 消息
    */
   receiveMessage(state, message) {
-    addMessage(state, message);
+    addMessage(state, message)
   },
 
   switchThread(state, id) {
-    setCurrentThread(state, id);
+    setCurrentThread(state, id)
   }
-};
+}

@@ -78,6 +78,8 @@ copySome '.babelrc'
 #copy .browserslistrc file from project $o_p
 copySome '.browserslistrc'
 
+#copySome 'src' "" "vue-ssr-koa-eteplus" "vue-csr-dev-with-webpack"
+
 #get list
 #path=/d/code-store/nodejs/vue-ssr-koa-demo && list=$(ls -a "$path") && echo "$list"
 list=$(

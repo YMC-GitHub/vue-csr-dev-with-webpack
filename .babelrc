@@ -9,9 +9,9 @@
     "stage-2"
   ],
   "plugins": [
-    "transform-vue-jsx",
     "transform-runtime",
-    "syntax-dynamic-import"
+    "syntax-dynamic-import",
+    "transform-vue-jsx"
   ],
   "env": {
     "test": {
@@ -20,6 +20,8 @@
         "stage-2"
       ],
       "plugins": [
+        "transform-runtime",
+        "syntax-dynamic-import",
         "transform-vue-jsx",
         "istanbul"
       ]

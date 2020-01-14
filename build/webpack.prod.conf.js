@@ -37,6 +37,8 @@ const utils = require('./utils')
 //include some data
 const config = require('../config')
 const baseWebpackConfig = require('./webpack.base.conf')
+const rootPath = path.resolve(__dirname, '../')
+const resolve = file => path.resolve(rootPath, file)
 
 //check if pass NODE_ENV arg with test symbol
 const isTes = utils.isTes()
@@ -98,7 +100,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: isTes ? 'index.html' : config.build.index,
       //use the index.html file in project dir as his template
-      template: 'index.html',
+      template: resolve('src/csr-index.template.html'),
       inject: true,
       minify: {
         removeComments: true,

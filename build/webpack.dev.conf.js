@@ -11,6 +11,8 @@ const utils = require('./utils')
 //include some data
 const config = require('../config')
 const baseWebpackConfig = require('./webpack.base.conf')
+const rootPath = path.resolve(__dirname, '../')
+const resolve = file => path.resolve(rootPath, file)
 
 //get the host and port passed by args
 const HOST = process.env.HOST
@@ -58,7 +60,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'index.html',
+      template: resolve('src/csr-index.template.html'),
       inject: true
     }),
     // copy custom static assets

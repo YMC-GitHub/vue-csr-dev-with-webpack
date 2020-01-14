@@ -42,7 +42,7 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   //set enty
   entry: {
-    app: './src/ssr-entry-client.js'
+    app: './src/ssr-client.entry.js'
   },
   //set output with project config
   output: {

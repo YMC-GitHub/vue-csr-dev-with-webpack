@@ -151,41 +151,31 @@ note: remember to take care of their version with each other.
 
 `.eslintrc.js`
 
-\# for default env:
+01.tell eslint he is the root config? [config](.eslintrc.js#L4-#L4)
 
-01.he is the root config?
+02.tell eslint to lint all valid babel code with the fantastic ESLint? [config](.eslintrc.js#L5-#L5)
 
-02.to lint aLL valid Babel code with the fantastic ESLint?
+03.tell eslint your code is in ECMAScript modules?no for "script" and yes for "module" [config](.eslintrc.js#L7-#L7)
 
-03.support es6(es2015)? es7? es8?
+04.tell eslint to translate your code syntax to  esx(3,5,6,7,8-?)? [config](.eslintrc.js#L8-#L8)
 
-04.my code is in ECMAScript modules?
+05.tell eslint to predefine global variables for new ES6 global variables? [config](.eslintrc.js#L13-#L13)
 
-05.support jsx?
+06.tell eslint to predefine  global variables for browser env? [config](.eslintrc.js#L11-#L11)
 
-06.predefined global variables for browser env?
+07.tell eslint to predefine  global variables for node env? [config](.eslintrc.js#L12-#L12)
 
-07.predefined global variables for node env?
+08.tell eslint to use some rule from some extend? [config](.eslintrc.js#L15-#L17)
 
-08.predefined global variables for browser-only code that uses Browserify/WebPack?
+09.tell eslint to use some plugin to handle some rule? [config](.eslintrc.js#L19-#L21)
 
-09.use some rule from some extend?
+10.tell eslint to add some custom rules? [config](.eslintrc.js#L31-#L54)
 
-10.use some plugin to handle some rule?
+11.tell eslint to use eslint-config-airbnb-base 's rule? [config](.eslintrc.js#L16-#L16)
 
-11.add some custom rules?
+12.tell eslint to use eslint-plugin-html to lin .vue file? [config](.eslintrc.js#L20-#L20)
 
-12.use eslint built in rule?
-
-13.use eslint-plugin-vue 's rule?
-
-14.use eslint-plugin-prettier 's rule?
-
-15.use eslint-plugin-vue?
-
-16.use eslint-plugin-prettier?
-
-17.allow debugger during development?
+13.tell eslint to use webpack's resolver to check if imports actually resolve [config](.eslintrc.js#L23-#L29)
 
 `.postcssrc.js`
 

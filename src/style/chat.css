@@ -15,6 +15,7 @@
   max-width: 760px;
   margin: 20px auto;
   overflow: hidden;
+  background-color: #aad;
 }
 
 .message-list,
@@ -23,13 +24,20 @@
   font-size: 16px;
   height: 400px;
   margin: 0;
-  overflow-y: auto;
+  overflow-y: hidden;
   padding: 0;
 }
 
+.message-list{
+  width:100%;
+  background-color: burlywood;
+}
+
+
 .message-section {
   float: right;
-  width: 65%;
+  width: 100%;
+  background-color: blueviolet;
 }
 
 .thread-section {
@@ -83,6 +91,7 @@
   float: right;
   font-size: 12px;
 }
+
 
 .message-text,
 .thread-last-message {

@@ -1,28 +1,84 @@
 <template>
-  <div 
-id="app" class="align-h-center ">
-    <router-view />
+  <div id="app">
+    <div class="menu-horizontal">
+      <router-link 
+class="menu__heading menu__link" to="/home"
+      >Home</router-link
+      >
+      <ul class="menu__list">
+        <li class="menu__item">
+          <router-link
+            class="menu__link"
+            to="/menu"
+            active-class="menu__item--active"
+          >Menu</router-link
+          >
+        </li>
+        <li class="menu__item">
+          <router-link
+            class="menu__link"
+            to="/button"
+            active-class="menu__item--active"
+          >Button</router-link
+          >
+        </li>
+        <li class="menu__item">
+          <router-link
+            class="menu__link"
+            to="/lang"
+            active-class="menu__item--active"
+          >Lang</router-link
+          >
+        </li>
+        <li class="menu__item">
+          <router-link
+            class="menu__link"
+            to="/chat"
+            active-class="menu__item--active"
+          >Chat</router-link
+          >
+        </li>
+        <li class="menu__item">
+          <router-link
+            class="menu__link"
+            to="/shop"
+            active-class="menu__item--active"
+          >Shop</router-link
+          >
+        </li>
+      </ul>
+    </div>
+    <transition 
+name="fade" mode="out-in">
+      <router-view class="view" />
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "APP"
 };
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin: 60px auto 0 auto;
+/* normalize */
+@import "./assets/css/normalize.css";
+
+/* Menu */
+@import "./components/Menu/base.css";
+@import "./components/Menu/horizontal.css";
+
+/* Button*/
+@import "./components/Button/base.css";
+
+html {
+  font-size: 62.5%;
 }
-.align-h-center {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
+body {
+  font-size: 1.4rem;
+}
+.view {
+  padding: 2rem;
 }
 </style>

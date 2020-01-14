@@ -1,4 +1,5 @@
 const data = require("./mock-data");
+
 const LATENCY = 16;
 
 export function getAllMessages(cb) {
@@ -9,7 +10,7 @@ export function getAllMessages(cb) {
 
 export function createMessage({ text, thread }, cb) {
   const timestamp = Date.now();
-  const id = "m_" + timestamp;
+  const id = `m_${timestamp}`;
   const message = {
     id,
     text,
@@ -18,7 +19,7 @@ export function createMessage({ text, thread }, cb) {
     threadName: thread.name,
     authorName: "Evan"
   };
-  setTimeout(function() {
+  setTimeout(() => {
     cb(message);
   }, LATENCY);
 }

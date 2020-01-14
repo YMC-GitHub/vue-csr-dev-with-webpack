@@ -1,1 +1,0 @@
-Common non-cosmetic structural design patterns.

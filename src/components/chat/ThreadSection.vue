@@ -1,7 +1,7 @@
 <template>
   <div class="thread-section">
     <div class="thread-count">
-      <span v-show="unreadCount"> Unread threads: {{ unreadCount }} </span>
+      <span v-show="unreadCount">Unread threads: {{ unreadCount }}</span>
     </div>
     <ul class="thread-list">
       <thread
@@ -16,8 +16,9 @@
 </template>
 
 <script>
-import Thread from "./Thread.vue";
 import { mapActions, mapGetters } from "vuex";
+import Thread from "./Thread";
+
 export default {
   name: "ThreadSection",
   components: { Thread },

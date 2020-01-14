@@ -9,30 +9,30 @@ const state = {
 
 // getters
 const getters = {
-  cartProducts: (state, getters, rootState) => {
-    return state.items.map(({ id, quantity }) => {
+  cartProducts: (_state, _getters, rootState) =>
+    _state.items.map(({ id, quantity }) => {
       const product = rootState.shop.products.all.find(
-        product => product.id === id
+        _product => _product.id === id
       );
       return {
         title: product.title,
         price: product.price,
         quantity
       };
-    });
-  },
+    }),
 
-  cartTotalPrice: (state, getters) => {
-    return getters.cartProducts.reduce((total, product) => {
-      return total + product.price * product.quantity;
-    }, 0);
-  }
+  cartTotalPrice: (_state, _getters) =>
+    // eslint-disable-next-line no-mixed-operators
+    _getters.cartProducts.reduce(
+      (total, product) => total + product.price * product.quantity,
+      0
+    )
 };
 
 // actions
 const actions = {
-  checkout({ commit, state }, products) {
-    const savedCartItems = [...state.items];
+  checkout({ commit, state: _state }, products) {
+    const savedCartItems = [..._state.items];
     commit("setCheckoutStatus", null);
     // empty cart
     commit("setCartItems", { items: [] });
@@ -47,10 +47,10 @@ const actions = {
     );
   },
 
-  addProductToCart({ state, commit }, product) {
+  addProductToCart({ state: _state, commit }, product) {
     commit("setCheckoutStatus", null);
     if (product.inventory > 0) {
-      const cartItem = state.items.find(item => item.id === product.id);
+      const cartItem = _state.items.find(item => item.id === product.id);
       if (!cartItem) {
         commit("pushProductToCart", { id: product.id });
       } else {
@@ -68,24 +68,24 @@ const actions = {
 
 // mutations
 const mutations = {
-  pushProductToCart(state, { id }) {
-    state.items.push({
+  pushProductToCart(_state, { id }) {
+    _state.items.push({
       id,
       quantity: 1
     });
   },
 
-  incrementItemQuantity(state, { id }) {
-    const cartItem = state.items.find(item => item.id === id);
+  incrementItemQuantity(_state, { id }) {
+    const cartItem = _state.items.find(item => item.id === id);
     cartItem.quantity++;
   },
 
-  setCartItems(state, { items }) {
-    state.items = items;
+  setCartItems(_state, { items }) {
+    _state.items = items;
   },
 
-  setCheckoutStatus(state, status) {
-    state.checkoutStatus = status;
+  setCheckoutStatus(_state, status) {
+    _state.checkoutStatus = status;
   }
 };
 

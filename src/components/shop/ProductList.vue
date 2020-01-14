@@ -14,6 +14,7 @@ v-for="product in products" :key="product.id">
 
 <script>
 import { mapState, mapActions } from "vuex";
+
 export default {
   computed: mapState({
     products: state => state.shop.products.all

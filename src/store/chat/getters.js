@@ -1,6 +1,5 @@
-const currentThread = state => {
-  return state.currentThreadID ? state.threads[state.currentThreadID] : {};
-};
+const currentThread = state =>
+  state.currentThreadID ? state.threads[state.currentThreadID] : {};
 export default {
   threads: state => state.threads,
   currentThread,
@@ -14,11 +13,11 @@ export default {
   /**
    * 获取未读消息数量
    */
-  unreadCount: ({ threads }) => {
-    return Object.keys(threads).reduce((count, id) => {
-      return threads[id].lastMessage.isRead ? count : count + 1;
-    }, 0);
-  },
+  unreadCount: ({ threads }) =>
+    Object.keys(threads).reduce(
+      (count, id) => (threads[id].lastMessage.isRead ? count : count + 1),
+      0
+    ),
   /**
    * 返回排序消息
    */

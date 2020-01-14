@@ -19,12 +19,12 @@ const actions = {
 
 // mutations
 const mutations = {
-  setProducts(state, products) {
-    state.all = products;
+  setProducts(_state, products) {
+    _state.all = products;
   },
 
-  decrementProductInventory(state, { id }) {
-    const product = state.all.find(product => product.id === id);
+  decrementProductInventory(_state, { id }) {
+    const product = _state.all.find(_product => _product.id === id);
     product.inventory--;
   }
 };

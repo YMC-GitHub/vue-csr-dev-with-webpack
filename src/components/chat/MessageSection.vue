@@ -18,8 +18,9 @@ class="message-list" ref="list">
 </template>
 
 <script>
-import Message from "./Message.vue";
 import { mapActions, mapGetters } from "vuex";
+import Message from "./Message";
+
 export default {
   name: "MessageSection",
   components: { Message },
@@ -29,7 +30,7 @@ export default {
     };
   },
   async asyncData({ store, route }) {
-    //await dispatch("chat/getAllMessages");
+    // await dispatch("chat/getAllMessages");
   },
   created() {
     this.getMassage();

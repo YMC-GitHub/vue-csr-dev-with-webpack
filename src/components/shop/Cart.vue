@@ -22,6 +22,7 @@ v-for="product in products" :key="product.id">
 
 <script>
 import { mapGetters, mapState } from "vuex";
+
 export default {
   computed: {
     ...mapState({

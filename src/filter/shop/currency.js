@@ -1,17 +1,18 @@
 const digitsRE = /(\d{3})(?=\d)/g;
 
-export function currency(value, currency, decimals) {
+export function currency(value, _currency, decimals) {
   value = parseFloat(value);
+  // eslint-disable-next-line no-restricted-globals
   if (!isFinite(value) || (!value && value !== 0)) return "";
-  currency = currency != null ? currency : "$";
+  _currency = _currency != null ? _currency : "$";
   decimals = decimals != null ? decimals : 2;
-  var stringified = Math.abs(value).toFixed(decimals);
-  var _int = decimals ? stringified.slice(0, -1 - decimals) : stringified;
-  var i = _int.length % 3;
-  var head = i > 0 ? _int.slice(0, i) + (_int.length > 3 ? "," : "") : "";
-  var _float = decimals ? stringified.slice(-1 - decimals) : "";
-  var sign = value < 0 ? "-" : "";
+  const stringified = Math.abs(value).toFixed(decimals);
+  const int = decimals ? stringified.slice(0, -1 - decimals) : stringified;
+  const i = int.length % 3;
+  const head = i > 0 ? int.slice(0, i) + (int.length > 3 ? "," : "") : "";
+  const float = decimals ? stringified.slice(-1 - decimals) : "";
+  const sign = value < 0 ? "-" : "";
   return (
-    sign + currency + head + _int.slice(i).replace(digitsRE, "$1,") + _float
+    sign + _currency + head + int.slice(i).replace(digitsRE, "$1,") + float
   );
 }

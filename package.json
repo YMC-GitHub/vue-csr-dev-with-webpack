@@ -17,9 +17,9 @@
     "build": "rimraf dist && node build/build.js",
     "build:csr-client": "rimraf dist && node build/build.js",
     "build:csr": "npm run build:csr-client",
-    "start": "node csr-server",
-    "start:csr-server": "node csr-server",
-    "pro:csr": "node csr-server"
+    "start": "node app/csr-server",
+    "start:csr-server": "node app/csr-server",
+    "pro:csr": "node app/csr-server"
   },
   "engines": {
     "node": ">= 6.0.0",

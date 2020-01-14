@@ -1,5 +1,5 @@
 const app = require('./app-koa')
-const configServer = require('./config/server')
+const configServer = require('../config/server')
 const port = process.env.PORT || configServer.port || 3000
 app.listen(port, '0.0.0.0', () => {
   console.log(`server started at localhost:${port}`)

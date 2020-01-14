@@ -10,7 +10,7 @@ const fs = require('fs')
 const path = require('path')
 const resolve = file => path.resolve(__dirname, file)
 //include some config
-const configServer = require('./config/server')
+const configServer = require('../config/server')
 //read html index  file
 const template = fs.readFileSync(configServer.index, 'utf-8')
 

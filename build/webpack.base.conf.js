@@ -39,7 +39,7 @@ const createLintingRule = () => ({
 
 module.exports = {
   //set the wepack context dir
-  context: path.resolve(__dirname, '../'),
+  context: rootPath,
   //set enty
   entry: {
     app: './src/ssr-client.entry.js'

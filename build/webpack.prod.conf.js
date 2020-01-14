@@ -37,12 +37,13 @@ const utils = require('./utils')
 //include some data
 const config = require('../config')
 const baseWebpackConfig = require('./webpack.base.conf')
+
 const rootPath = path.resolve(__dirname, '../')
 const resolve = file => path.resolve(rootPath, file)
 
 //check if pass NODE_ENV arg with test symbol
 const isTes = utils.isTes()
-const env = isTes ? require('../config/test.env') : require('../config/prod.env')
+const env = isTes ? require(resolve('config/test.env')) : require(resolve('config/prod.env'))
 
 //merge pro or test config with  webpack base config
 const webpackConfig = merge(baseWebpackConfig, {
@@ -125,7 +126,7 @@ const webpackConfig = merge(baseWebpackConfig, {
           module.resource &&
           /\.js$/.test(module.resource) &&
           module.resource.indexOf(
-            path.join(__dirname, '../node_modules')
+            resolve('node_modules')/*path.join(__dirname, '../node_modules')*/
           ) === 0
         )
       }

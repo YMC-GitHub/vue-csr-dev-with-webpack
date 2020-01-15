@@ -18,8 +18,8 @@ if (process.env.NODE_ENV === undefined) {
 const isProd = process.env.NODE_ENV === 'production'
 
 const app = new Koa()
-// for static serve in public path
-app.use(require('koa-static')((isProd ? config.build.static : config.dev.static)))
+// for static serve in public path eg,img,ico,...
+app.use(require('koa-static')((isProd ? config.build.public : config.dev.public)))
 // for static web serve in dist path
 app.use(async (ctx, next) => {
   try {

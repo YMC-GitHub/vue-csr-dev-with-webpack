@@ -51,72 +51,73 @@ note: remember to take care of their version with each other.
 
 `webpack.dev.conf.js`
 
-01.set devtool for dev mode [config](./build/webpack.dev.conf.js#L25-#L25)
+01.set style loader for css/less/sass/scss/stylus/styl/postcss file  [config](./build/webpack.dev.conf.js#L24-#L24)
 
-02.set webpack-dev-server options [config](./build/webpack.dev.conf.js#L28-#L50)
+02.set devtool for dev mode  [config](./build/webpack.dev.conf.js#L27-#L27)
 
-03.set process.env for webpack dev env with DefinePlugin [config](./build/webpack.dev.conf.js#L52-#L54)
+03.set webpack-dev-server options  [config](./build/webpack.dev.conf.js#L30-#L52)
 
-04.set hot module replace [config](./build/webpack.dev.conf.js#L55-#L55)
+04.set process.env for webpack dev env with DefinePlugin  [config](./build/webpack.dev.conf.js#L54-#L56)
 
-05.tell HMR shows correct file names in console on update [config](./build/webpack.dev.conf.js#L56-#L56)
+05.set hot module replace  [config](./build/webpack.dev.conf.js#L57-#L57)
 
-06.tell no emit on errors [config](./build/webpack.dev.conf.js#L57-#L57)
+06.tell HMR shows correct file names in console on update  [config](./build/webpack.dev.conf.js#L58-#L58)
 
-07.auto genarate index.html [config](./build/webpack.dev.conf.js#L59-#L63)
+07.tell no emit on errors  [config](./build/webpack.dev.conf.js#L59-#L59)
 
-08.copy custom static assets [config](./build/webpack.dev.conf.js#L65-#L71)
+08.auto genarate index.html  [config](./build/webpack.dev.conf.js#L61-#L65)
 
-09.set friendly errors [config](./build/webpack.dev.conf.js#L87-#L94)
+09.copy custom static assets  [config](./build/webpack.dev.conf.js#L67-#L73)
 
-10.set notify on errors with project config [config](./build/webpack.dev.conf.js#L91-#L93)
+10.set friendly errors  [config](./build/webpack.dev.conf.js#L84-#L91)
 
-11.set style loader for css/less/sass/scss/stylus/styl/postcss file [config](./build/webpack.dev.conf.js#L21-#L23)
-
+11.set notify on errors with project config  [config](./build/webpack.dev.conf.js#L88-#L91)
 
 `webpack.prod.conf.js`
 
-01.set the devtool tool with config [config](./build/webpack.prod.conf.js#L56-#L56)
+01.set style loader for css/less/sass/scss/stylus/styl/postcss file  [config](./build/webpack.prod.conf.js#L52-#L56)
 
-02.set files output with project config [config](./build/webpack.prod.conf.js#L57-#L62)
+02.set the devtool tool with config  [config](./build/webpack.prod.conf.js#L59-#L59)
 
-03.set process.env for webpack pro env with DefinePlugin [config](./build/webpack.prod.conf.js#L66-#L68)
+03.set files output with project config  [config](./build/webpack.prod.conf.js#L60-#L65)
 
-04.set uglify js [config](./build/webpack.prod.conf.js#L70-#L78)
+04.set process.env for webpack pro env with DefinePlugin  [config](./build/webpack.prod.conf.js#L69-#L71)
 
-05.extract css into its own file [config](./build/webpack.prod.conf.js#L80-#L87)
+05.set uglify js  [config](./build/webpack.prod.conf.js#L73-#L81)
 
-06.compress extracted CSS [config](./build/webpack.prod.conf.js#L90-#L94)
+06.extract css into its own file  [config](./build/webpack.prod.conf.js#L83-#L90)
 
-07.generate index.html  with template for pro or test [config](./build/webpack.prod.conf.js#L98-#L111)
+07.compress extracted CSS  [config](./build/webpack.prod.conf.js#L93-#L97)
 
-08.keep module.id stable when vendor modules does not change [config](./build/webpack.prod.conf.js#L114-#L114)
+08.generate index.html  with template for pro or test  [config](./build/webpack.prod.conf.js#L101-#L115)
 
-09.enable scope hoisting [config](./build/webpack.prod.conf.js#L116-#L116)
+09.keep module.id stable when vendor modules does not change  [config](./build/webpack.prod.conf.js#L117-#L117)
 
-10.split vendor js into its own file [config](./build/webpack.prod.conf.js#L118-#L130)
+10.enable scope hoisting  [config](./build/webpack.prod.conf.js#L119-#L119)
 
-11.extract webpack runtime and module manifest to its own file [config](./build/webpack.prod.conf.js#L133-#L136)
+11.split vendor js into its own file  [config](./build/webpack.prod.conf.js#L121-#L133)
 
-12.extracts shared chunks from code splitted chunks and bundles them [config](./build/webpack.prod.conf.js#L140-#L145)
+12.extract webpack runtime and module manifest to its own file  [config](./build/webpack.prod.conf.js#L136-#L139)
 
-13.copy custom static assets [config](./build/webpack.prod.conf.js#L148-#L154)
+13.extracts shared chunks from code splitted chunks and bundles them  [config](./build/webpack.prod.conf.js#L143-#L148)
 
-14.set style loader for css/less/sass/scss/stylus/styl/postcss file [config](./build/webpack.prod.conf.js#L48-#L53)
+14.copy custom static assets  [config](./build/webpack.prod.conf.js#L151-#L157)
 
-15.use gzip with config data [config](./build/webpack.prod.conf.js#L159-#L175)
+15.use gzip with config data  [config](./build/webpack.prod.conf.js#L162-#L178)
 
-16.use bundle analyzer with config data [config](./build/webpack.prod.conf.js#L177-#L180)
+16.use bundle analyzer with config data  [config](./build/webpack.prod.conf.js#L180-#L183)
 
 `webpack.test.conf.js`
 
-01.set process.env for webpack test env with DefinePlugin [config](./build/webpack.test.conf.js#L23-#L25)
+01.set process.env for webpack test env with DefinePlugin  [config](./build/webpack.test.conf.js#L26-#L28)
 
-02.to make lang="scss" work in test [config](./build/webpack.test.conf.js#L15-#L21)
+02.to make lang="scss" work in test  [config](./build/webpack.test.conf.js#L19-#L22)
 
-03.set style loader for css/less/sass/scss/stylus/styl/postcss file [config](./build/webpack.test.conf.js#L12-#L12)
+03.set style loader for css/less/sass/scss/stylus/styl/postcss file  [config](./build/webpack.test.conf.js#L15-#L15)
 
-04.no need for app entry during tests [config](./build/webpack.test.conf.js#L30-#L30)
+04.no need for app entry during tests  [config](./build/webpack.test.conf.js#L33-#L33)
+
+05.set the devtool tool with config  [config](./build/webpack.test.conf.js#L17-#L17)
 
 
 `.babelrc`
@@ -202,14 +203,12 @@ note: remember to take care of their version with each other.
 ```sh
 #install his deps
 : <<cmd
-#npm install
-#npm run install:csr
-./dev/npm-install-csr-lib.sh
+npm run install
 cmd
 
 #devleop him
 : <<cmd
-npm run dev:csr
+npm run dev
 cmd
 
 #test him
@@ -221,8 +220,7 @@ cmd
 
 #build him
 : <<cmd
-npm run build:csr
-#npm run build:csr-client
+npm run build
 cmd
 
 #lint him(optional)
@@ -233,7 +231,7 @@ cmd
 
 #beautify him(optional)
 : <<cmd
-npm run format
+#npm run format
 cmd
 
 #publish him
@@ -244,7 +242,7 @@ cmd
 
 #run him
 : <<cmd
-#npm run start:csr-server
+npm run start
 cmd
 ```
 

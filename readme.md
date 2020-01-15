@@ -18,6 +18,7 @@ get detail [here](./note/dir-construtor.md)
 - postcss (handle css style with future feat)
 - node-sass (handle sass/scss style (optional))
 - less (handle less style (optional))
+- webpack-dev-server (use him as a simple server when develop)
 
 note: remember to take care of their version with each other.
 
@@ -30,7 +31,8 @@ get detail [here](./note/some-config-desc.md)
 ```sh
 #install his deps
 : <<cmd
-npm run install
+#npm run install
+npm install
 cmd
 
 #devleop him

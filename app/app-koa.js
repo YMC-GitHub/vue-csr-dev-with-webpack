@@ -51,15 +51,23 @@ app.use(serve(isProd ? config.build.public : config.dev.public, true))
 app.use(serve(isProd ? config.build.www : config.dev.www, true))
 // handle all route to html index file for spa
 app.use(async (ctx, next) => {
-  try {
-    ctx.body = fs.readFileSync((isProd ? config.build.index : config.dev.index), 'utf-8')
-    ctx.set('Content-Type', 'text/html')
-    ctx.set('Server', 'Koa2 client side render')
-  } catch (e) {
+  if ((/^(?!\/api)(?:\/|$)/).test(ctx.url)) {
+    try {
+      ctx.body = fs.readFileSync((isProd ? config.build.index : config.dev.index), 'utf-8')
+      ctx.set('Content-Type', 'text/html')
+      ctx.set('Server', 'Koa2 client side render')
+    } catch (e) {
+      next()
+    }
+  } else {
     next()
   }
 })
 //for other
-
+// handle 404 for /apixx or /api/xx
+app.use((ctx, next) => {
+  ctx.type = 'html'
+  ctx.body = '404 | Page Not Found'
+})
 
 module.exports = app

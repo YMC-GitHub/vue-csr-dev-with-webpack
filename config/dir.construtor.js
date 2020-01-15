@@ -11,7 +11,7 @@ module.exports = {
   test: resolve('../test'),
   //save the build ouput code by webpack
   dist: resolve('../dist'),
-  //static resource file that will be serve by server
+  //static resource file that will be copyed by webpack
   static: resolve('../static'),
   //static resource file that will be serve by server
   public: resolve('../public'),

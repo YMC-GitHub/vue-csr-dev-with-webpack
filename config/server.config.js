@@ -13,6 +13,8 @@ module.exports = {
     //what is the name of html files
     index: resolve('../dist/index.html'),
     //where the static file to serve?
+    public: projectDirConstrutoConfig.public,
+    //where the static file to copy by webpack?
     static: projectDirConstrutoConfig.static,
   },
   dev: {
@@ -25,6 +27,8 @@ module.exports = {
     //what is the name of html files
     index: resolve('../src/csr-index.template.html'),
     //where the static file to serve?
+    public: projectDirConstrutoConfig.public,
+    //where the static file to copy by webpack?
     static: projectDirConstrutoConfig.static,
   }
 }

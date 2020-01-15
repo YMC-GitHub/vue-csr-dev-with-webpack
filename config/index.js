@@ -31,7 +31,7 @@ module.exports = {
     //define root assets dir
     assetsRoot: serverConfig.build.www,
     // the assetsSubDirectory.to is relative to assetsRoot
-    assetsSubDirectory: { from: projectDirConstrutoConfig.public, to: 'static' },
+    assetsSubDirectory: { from: projectDirConstrutoConfig.static, to: 'static' },
     // the assert public path is relative to assetsRoot
     assetsPublicPath: '/',
     productionSourceMap: true,
@@ -54,7 +54,7 @@ module.exports = {
     port: serverConfig.dev.port,
     index: serverConfig.dev.index,
     //define static assets dir
-    assetsSubDirectory: { from: projectDirConstrutoConfig.public, to: 'static' },
+    assetsSubDirectory: { from: projectDirConstrutoConfig.static, to: 'static' },
     //define public assets dir
     assetsPublicPath: '/',
     //define proxy map

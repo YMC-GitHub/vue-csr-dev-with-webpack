@@ -8,6 +8,7 @@ const Koa = require('koa')
 const favicon = require('koa-favicon')
 const compression = require('koa-compress')
 const logger = require('koa-logger')
+const router = require('koa-router')()
 const fs = require('fs')
 const path = require('path')
 
@@ -50,19 +51,16 @@ app.use(serve(isProd ? config.build.public : config.dev.public, true))
 // for static web serve in dist path
 app.use(serve(isProd ? config.build.www : config.dev.www, true))
 // handle all route to html index file for spa
-app.use(async (ctx, next) => {
-  if ((/^(?!\/api)(?:\/|$)/).test(ctx.url)) {
-    try {
-      ctx.body = fs.readFileSync((isProd ? config.build.index : config.dev.index), 'utf-8')
-      ctx.set('Content-Type', 'text/html')
-      ctx.set('Server', 'Koa2 client side render')
-    } catch (e) {
-      next()
-    }
-  } else {
+router.get(/^(?!\/api)(?:\/|$)/, (ctx, next) => {
+  try {
+    ctx.body = fs.readFileSync((isProd ? config.build.index : config.dev.index), 'utf-8')
+    ctx.set('Content-Type', 'text/html')
+    ctx.set('Server', 'Koa2 client side render')
+  } catch (e) {
     next()
   }
 })
+app.use(router.routes()).use(router.allowedMethods())
 //for other
 // handle 404 for /apixx or /api/xx
 app.use((ctx, next) => {

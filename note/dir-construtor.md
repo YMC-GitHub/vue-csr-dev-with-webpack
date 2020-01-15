@@ -3,17 +3,18 @@
 ```
 |--build # build the source files config for webpack
 |--config #some config for build the project
-|--csr-index.html #html index file for csr
-|--csr-server.js #js server file for csr
-|--husky.config.js
-|--index.html #html index file for webpack
-|--license #project license file
-|--lint-staged.config.js
-|--note #save my some note for the project
+|--src #save the source code (for dev)
+|--test #save the test source code (for test)
+|--dist #save the build ouput code by webpack (for pro)
+|--static #static resource file that will be copyed by webpack
+|--public #static resource file that will be serve by server (for pro)
+|--app #save the server source code(for pro)
 |--package.json #use npm ,and it's description
 |--readme.md #readme before
-|--src #save the source code (for dev)
-|--static #static resource file
+|--license #project license file
+|--note #save my some note for the project
+|--husky.config.js
+|--lint-staged.config.js
 ```
 
 ## webpack config  diretory construtor
@@ -34,31 +35,22 @@
 
 ```
 |--config #some config for build the project
-| |--dev.env.js #some env for development
-| |--index.js #project config index file
-| |--prod.env.js #some env for production
-| |--test.env.js #some env for testing
+| |--dir.construtor.js #the project dir construtor map
+| |--server.config.js #the server config for build and dev
+| |--dev.env.js #some env for development for webpack
+| |--index.js #config index file for webpack
+| |--prod.env.js #some env for production for webpack
+| |--test.env.js #some env for testing for webpack
 ```
 
 ## source code dir construtor
 
 ```
 |--src
-| |--App.vue #.vue index file
-| |--api #save some config for backend api or mock api
-| |--assets #save some static file
-| |--components #
-| |--filter #save some filter for vue engine
-| |--layout #save some layout
-| |--locale #save multi languge file
-| |--main.js #.js index file
-| |--router #save route file
-| |--ssr-entry-client.js
-| |--ssr-entry-server.js
-| |--store #save data file
-| |--style #css style file ,may be .css,.less,.scss,.postcss ...
-| |--utlis #save some tool for src
-| |--views #save some view file
+| |--ssr-client.entry.js #the webpack client entry for ssr or csr
+| |--ssr-server.entry.js #the webpack server entry for ssr
+| |--csr-index.template.html #the html file index for csr when dev env
+| |--ssr-index.template.html #the html file index for ssr when dev env
 ```
 
 
@@ -66,6 +58,9 @@
 
 ```
 |--dist
-| |--static #js/css file for web
+| |--static #js/css/img file for web
+| | |--js #js file for webpack output or copy from xx path
+| | |--css #css file for webpack output or copy from xx path
+| | |--img #css file for webpack output or copy from xx path
 | |--index.html #csr html index file
 ```

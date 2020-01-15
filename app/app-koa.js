@@ -40,11 +40,16 @@ app.use(favicon(isProd ? `${config.build.public}/favicon.ico` : `${config.dev.pu
   // n*ms*s*m*h*d*
 }))
 
+// static serve
+const serve = (filepath, cache) => require('koa-static')(resolve(filepath), {
+  // set browser cache max-age in milliseconds.
+  maxage: cache && isProd ? 60 * 60 * 24 * 30 : 0
+})
 // for static serve in public path eg,img,ico,...
-app.use(require('koa-static')((isProd ? config.build.public : config.dev.public)))
+app.use(serve(isProd ? config.build.public : config.dev.public, true))
 // for static web serve in dist path
-app.use(require('koa-static')((isProd ? config.build.www : config.dev.www)))
-
+app.use(serve(isProd ? config.build.www : config.dev.www, true))
+// handle all route to html index file for spa
 app.use(async (ctx, next) => {
   try {
     ctx.body = fs.readFileSync((isProd ? config.build.index : config.dev.index), 'utf-8')

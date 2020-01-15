@@ -129,3 +129,14 @@ exports.createNotifierCallback = () => {
     })
   }
 }
+exports.findPort = () => new Promise((resolve, reject) => {
+  const portfinder = require('portfinder')
+  portfinder.basePort = process.env.PORT || config.dev.port
+  portfinder.getPort((err, port) => {
+    if (err) {
+      reject(err)
+    } else {
+      resolve(port)
+    }
+  })
+})

@@ -4,7 +4,7 @@
 const utils = require('./utils')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const baseWebpackConfig = require('./webpack.base.conf')
+const baseWebpackConfig = require('./webpack.csr-bas.config')
 
 const rootPath = path.resolve(__dirname, '../')
 const resolve = file => path.resolve(rootPath, file)

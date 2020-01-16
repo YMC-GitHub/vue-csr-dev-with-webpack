@@ -23,7 +23,7 @@ module.exports = {
   'settings': {
     'import/resolver': {
       'webpack': {
-        'config': process.env.NODE_ENV === 'development' ? 'build/webpack.dev.conf.js' : 'build/webpack.prod.conf.js'
+        'config': process.env.NODE_ENV === 'development' ? 'build/webpack.csr-dev.config.js' : 'build/webpack.csr-pro.config.js'
       }
     }
   },

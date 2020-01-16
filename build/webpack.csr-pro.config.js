@@ -36,7 +36,7 @@ const webpack = require('webpack')
 const utils = require('./utils')
 //include some data
 const config = require('../config')
-const baseWebpackConfig = require('./webpack.base.conf')
+const baseWebpackConfig = require('./webpack.csr-bas.config')
 
 const rootPath = path.resolve(__dirname, '../')
 const resolve = file => path.resolve(rootPath, file)
@@ -150,8 +150,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     // copy custom static assets
     new CopyWebpackPlugin([
       {
-        from: config.dev.assetsSubDirectory.from,
-        to: config.dev.assetsSubDirectory.to,
+        from: config.build.assetsSubDirectory.from,
+        to: config.build.assetsSubDirectory.to,
         ignore: ['.*']
       }
     ])

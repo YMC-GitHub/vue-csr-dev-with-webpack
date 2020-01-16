@@ -25,7 +25,7 @@ const webpack = require('webpack')
 
 //include some config
 const config = require('../config')
-const webpackConfig = require('./webpack.prod.conf')
+const webpackConfig = require('./webpack.csr-pro.config')
 
 const spinner = ora('building for production...')
 spinner.start()

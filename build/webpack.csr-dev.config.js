@@ -10,7 +10,7 @@ const portfinder = require('portfinder')
 const utils = require('./utils')
 //include some data
 const config = require('../config')
-const baseWebpackConfig = require('./webpack.base.conf')
+const baseWebpackConfig = require('./webpack.csr-bas.config')
 const rootPath = path.resolve(__dirname, '../')
 const resolve = file => path.resolve(rootPath, file)
 

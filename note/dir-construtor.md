@@ -25,10 +25,10 @@
 | |--check-versions.js # check npm , node or other lib version
 | |--utils.js # some useful tool for this dir
 | |--vue-loader.conf.js #vue-loader config file
-| |--webpack.base.conf.js #a webpack config file for base
-| |--webpack.dev.conf.js #a webpack config file for development
-| |--webpack.prod.conf.js #a webpack config file for production
-| |--webpack.test.conf.js #a webpack config file for testing
+| |--webpack.csr-bas.config.js #a webpack config file for base
+| |--webpack.csr-dev.config.js #a webpack config file for development
+| |--webpack.csr-pro.config.js #a webpack config file for production
+| |--webpack.csr-pro.config.js #a webpack config file for testing
 ```
 
 ## project config diretory construtor
